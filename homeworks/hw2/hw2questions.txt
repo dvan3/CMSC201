@@ -1,0 +1,93 @@
+HW2 - Emacs Questions
+
+1.  What does C-v do ?
+Scrolls down a full screen.
+2.  Which key should you use for Meta ?
+Alt key.
+3.  What does M-v do ?
+Scrolls up a full screen.
+4.  What does C-a do ?
+Moves the cursor to the beginning of the line it is on.
+5.  What does C-e do ?
+Moves the cursor to the end of the line it is on.
+6.  What does M-< do ?
+Moves the cursor to the beginning of the whole text.
+7.  What does M-> do ?
+Moves the cursor to the end of the whole text.
+8.  What does C-g do ?
+Stops a command.
+9.  What does emacs do when a line of text gets too long for one line on the
+    screen ?
+The line of the text is continued to the next line and displays a \ at the
+ right margin.
+
+
+    The following is NOT the answer, just an explanation of how you should be
+    handling wrapping when writing your code so you conform to the standards:
+    This is called wrapping.  When writing code, you should attempt to work in
+    an 80-character wide window and avoid letting lines of code or comments
+    wrap down to the next line.  Wrapped lines obscure the indentation.  
+    Occasionally, wrapping can't be avoided in Python, however comments and
+    print statements can always be broken up over several lines.
+
+10. What does C-k do ?
+It kills from the cursor position to the end of the line.
+11. What does C-y do ?
+It yanks back what you recently killed with C-k.
+12. How would you kill a large group of lines ?  Typing a whole lot of C-ks
+    isn't the right answer.
+To kill a large group of lines, you would use
+ C-u (number of lines to kill) C-k.
+
+
+
+
+13. What does C-x C-s do ?
+Saves the file.
+14. What does C-x C-c do ?
+Ends the Emacs session.
+15. What is the command to use to replace a string with a different string ?
+M-x repl s<return>(word you replace)<return>(word you want to use)<return>
+
+
+
+16. What kind of file is indicated by a filename surrounded by # signs ?
+Auto-save files are surrounded by the # signs.
+
+
+
+
+    When you edit a file with emacs, it saves the previous version of the
+    file in your account with a tilde ~ after it.  This is a convenience for
+    you in case you made a lot of changes and then decided that the previous
+    version was better.  You can just copy that file to start over.
+
+
+17. What does L350 on the mode line indicate ?
+L350 indicates the cursor is on the 350th line of the text.
+
+
+
+18. When typing in a Python program, the mode will say Python.  
+    How does Emacs know to use that mode automatically ?
+Emacs knows what mode to use when when typing in python because of the .py at
+the end of the file name. Emacs reads that as a python program and will 
+automatically use the mode python.
+
+
+19. What's cool about C-s ? 
+C-s lets you search every word in the text file by each character of a word.
+For example, if I type in one letter into the I-search like A it will highlight
+every A in the text. If I type App, it will search for every word that has App.
+
+
+
+
+20. What does M-x help <Return> t do ?
+It brings up the Emacs Tutorial
+
+
+
+
+
+    

@@ -1,0 +1,6 @@
+       Alice:  77.21 - C
+         Bob:  85.86 - B
+     Charlie:  68.14 - D
+        Lisa:  95.49 - A
+
+    Class average: 81.68

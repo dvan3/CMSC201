@@ -1,0 +1,116 @@
+#Filename: design1.txt
+#Author:   Dave Van
+#Date:     4/21/10
+#Email:    dvan3@umbc.edu
+#Section:  06
+#
+#This program will read from a file and print an analysis of the file to the
+#screen. The sequence of tags in the file will be echoed to the output; any
+#other text in the file is to be ignored. If there is a tag balancing error or 
+#the program reaches the end of the file while in the middle of a tag, the 
+#program must quit and print an error message. If the end of fileis reached
+#without any errors, print a message to that effect.
+
+Algorithm Design:
+
+I.   The greeting is displayed to the user by a call to printGreeting()
+
+PHASE 1
+
+II.   The program will now prompt the user for a file name. Then program 
+      will check if the number of command arguments. Will use an if statement.
+	 A. If there are more than NUMARGS then system exit
+	 B. Else, proceed with the program
+III.  The program will now check if the input file exist with an if statement.
+	 A. If the file does not exist then system exit
+	 B. Else, proceed with the program
+IV.   Now the program will open the file by calling the function, fileOpen()
+V.    The program will now check if it is an html file with an if statement
+	 A. If the file is not in html then system exit
+	 B. Else, proceed with the program
+VI.   Now the program will read each line in the file with certain conditions
+	 A. If a line is a html tag, call the function enqueue() to append it
+	    to the queue
+	 B. else if the input end in the middle of a tag, report the error and
+	    exit
+	 C. else, do not enqueue
+VII.  The program will now close the file by calling the function fileClose()
+
+PHASE 2
+
+VIII. Now the program will start dequeuing and start pushing into a stack with 
+      an if statement
+	 A. If the tag is a START_TAG, then call the function push() to build
+	    a stack
+	 B. else if, the tag is a SELF_CLOSE tag, print tag + " self-closing"
+	 C. else, call the function compare()
+IX.   Now the program will use the function compare() to see if the tags match
+      with an if statement.
+	 A. If the compared tags are true, then print the starting tag matches
+	    the ending tag
+	 B. Else, print there is an error with the tags and system exit.
+X.    The program will now report that all of the tags match and end the file
+_______________________________________________________________________________
+
+Constants:
+
+NUMARGS    = 2
+START_TAG  = "< >"
+END_TAG    = "</ >"
+SELF_CLOSE = "< />"
+
+_______________________________________________________________________________
+
+Functions:
+
+#printGreeting()
+#displays a greeting and explanation of the program to the user
+#Inputs:  None
+#Outputs: None
+def printGreeting():
+
+#enqueue()
+#adds an item passed in the queue, q_items.
+#Inputs:  q_items, a queue
+#	  item,    an item to add in the queue
+#Outputs: None
+def enqueue(q_items, item):
+
+#dequeue()
+#removes the first item that got added into the queue from the queue and
+#returns it
+#Inputs:  q_items, a queue
+#Outputs: dequeued, the item that was removed from the queue.
+def dequeue(q_items):
+
+#push()
+#pushes the item passed in onto the stack passed in, s_items.
+#Inputs:  s_items, a stack
+#	  item,  an item to push onto the stack
+#Outputs: None
+def push(s_item, item):
+
+#pop()
+#pops an item from the stack passed in and returns it
+#Inputs:  s_items, a stack
+#Outputs: popped, the item popped from the stack or print "Phase 2: The tags 
+#	  match in this document" if the stack is empty
+def pop(s_items):
+
+#fileOpen()
+#opens the file
+#Inputs:  file_name, the file name the user inputs
+#Outputs: None
+def fileOpen(file_name):
+
+#fileClose()
+#closes the file
+#Inputs:  file_name, the file name the user inputs
+#Outputs: None
+def fileClose(file_name):
+
+#compare()
+#compares the tags of the html code and prints the results
+#Inputs:  None
+#Outputs: prints the results of the tags.
+def compare():

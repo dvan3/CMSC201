@@ -1,0 +1,153 @@
+#Filename: design2.txt
+#Author:   Dave Van
+#Date:     5/6/10
+#Email:    dvan3@umbc.edu
+#Section:  06
+#
+#This program will use recursive functions to draw a koch snowflake and a
+#C-Curve. It will also use a user defined turtle class to draw the snowflakes. 
+
+Algorithm Design:
+
+I.   The greeting is displayed to the user by a call to printGreeting()
+II.  The menu is displayed by a call to displayMenu()
+III. The user chooses a valid menu option 'K', 'C', 'A', or 'Q'
+IV.  A conditional on the valid choice does one of the following:
+     A. If the user chose KOCH, the kochFlake() function is called
+	1. The program will ask the user for a degree choice by calling the
+	   function getValidInt()
+	2. The program will ask the user for a color choice by calling the
+	   function getValidColor()
+	3. Now the program will call the function drawKoch(), that will draw
+	   the koch snowflake to the degree and color chosen by the user
+     B. If the user chose CCURVE, the cCurve() function is called and will
+	draw the C-Curve on the 12th degree
+     C. If the user chose ANIMATE, the animateKoch() function is called and
+	will draw degree 0 koch snowflake, then it will increase on the degree
+	after 5 seconds the koch is drawn.
+     D. If the user chose MENU_QUIT, the program exits
+     E. If the user chose some other letter a chose not on the menu, an error
+	message will be reported to the user
+V.   While the user has not chosen MENU_QUIT, the program repeats parts II - IV
+
+______________________________________________________________________________
+
+Constants:
+
+KOCH       = 'K'
+CCURVE     = 'C'
+ANIMATE    = 'A'
+MENU_QUIT  = 'Q'
+
+DEGREE_Z   = 0
+DEGREE_O   = 1
+DEGREE_T   = 2
+DEGREE_THR = 3
+DEGREE_F   = 4
+C_DEGREE   = 12
+
+MIN        = 0
+MAX        = 4
+
+RT_ANGLE   = 90
+CIRCLE     = 360
+HALF_CIRC  = 180
+
+Might need additional constants for angles
+______________________________________________________________________________
+
+Functions:
+
+#printGreeting()
+#displays a greeting and explanation of the program to the user
+#Inputs:  None
+#Outputs: None
+def printGreeting():
+
+#displayMenu()
+#displays the menu choices
+#Inputs:  None
+#Outputs: None
+def displayMenu():
+
+#kochFlake()
+#a top level function that handles getting the degree, color, and drawing the
+#koch snowflake
+#Inputs:  None
+#Outputs: None
+def kochFlake():
+
+#cCurve()
+#a recursive function that draws the C-Curve
+#Inputs:  degree, the degree of the line
+#         length, the length of the line
+#Outputs: it will draw the C-Curve
+def cCurve(degree, length):
+
+#animateKoch()
+#a recursive function that animates degree 0 through degree 4 of the koch
+#snowflake
+#Inputs:  degree, the degree of the line
+#         length, the length of the line
+#Outputs: it will animate the koch snowflake from degree 0 to degree 4
+def animateKoch(degree, length):
+
+#getValidInt()
+#prompts the user and gets an integer from the user between 0 through 4
+#Inputs:  question, the question to be used
+#         min, the minimum value accepted
+#         max, the maximum value accepted
+#Outputs: a valid value
+def getValidInt(question, min, max):
+
+#getValidColor()
+#prompt the user and gets a valid color
+#Inputs:  question, the question to be used
+#         color_list, the list of colors accepted
+#Outputs: a valid color
+def getValidColor(question, color_list):
+
+#drawKoch()
+#draws the koch snowflake to the chosen degree
+#Inputs:  degree, the degree of the line
+#         length, the length of the line
+#Outputs: the koch snowflake to the degree chosen
+def drawKoch(degree, length):
+
+_______________________________________________________________________________
+
+Class description:
+
+#Name of the class
+Class Turtle:
+
+
+#constructor
+def __init__(self, position, direction, pen):
+
+
+#Accessors
+#gets the position of the turtle
+def getPosition(self, getX, getY):
+
+#gets the direction for the turtle
+def getDirection(self):
+
+#makes the turtle come up to stop drawing
+def penUp(self):
+
+#makes the turtle go down to write
+def penDown(self):
+
+#moves the turtle in the direction is it facing
+def forward(self, distance):
+
+#moves the turtle backwards from where it is facing
+def backwards(self, distance):
+
+#turns the turtle by the angle chosen
+def turn(self, angle):
+
+#makes the color of the pen
+def color(self, color):
+
